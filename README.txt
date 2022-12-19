@@ -89,7 +89,7 @@ There is some basic lighting implemented that can be toggled on and off by press
 Installation:
 ##############
 
-The files can be downloaded at https://github.com/ibid-11962/Windows-95-3D-Maze-Screensaver/
+The files can be downloaded at https://github.com/dpaoliello/Windows-95-3D-Maze-Screensaver/
 
 These have been tested to run on Google Chrome remotely, but will not run locally. They seem to run locally on Firefox though.
 

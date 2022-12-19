@@ -597,22 +597,24 @@ function nextMove(theta,X,Y,dtheta,dX,dY)
 		//front=open - foward
 		//left=open - rotate left
 		//else i.e. dead end - rotate right
+		const forwardMoveFactor = 500;
+		const turnMoveFactor = 900.0;
 		if (dtheta && walls[direction]==1) {
-			dX = ((direction==1)-(direction==3))/100;
-			dY = ((direction==2)-(direction==0))/100;
+			dX = ((direction==1)-(direction==3))/forwardMoveFactor;
+			dY = ((direction==2)-(direction==0))/forwardMoveFactor;
 			return [theta,X+dX,Y+dY,0,dX,dY];
 		} else if (walls[(direction+3)%4]==1) {
-			dtheta=-1 * Math.PI/180.0;
+			dtheta=-1 * Math.PI/turnMoveFactor;
 			return [theta+dtheta,X,Y,dtheta,0,0];
 		} else if (walls[direction]==1){
-			dX = ((direction==1)-(direction==3))/100;
-			dY = ((direction==2)-(direction==0))/100;
+			dX = ((direction==1)-(direction==3))/forwardMoveFactor;
+			dY = ((direction==2)-(direction==0))/forwardMoveFactor;
 			return [theta,X+dX,Y+dY,0,dX,dY];
 		} else if (walls[(direction+1)%4]==1){
-			dtheta=1 * Math.PI/180.0;
+			dtheta=1 * Math.PI/turnMoveFactor;
 			return [theta+dtheta,X,Y,dtheta,0,0];
 		} else {
-			dtheta=-1 * Math.PI/180.0;
+			dtheta=-1 * Math.PI/turnMoveFactor;
 			return [theta+dtheta,X,Y,dtheta,0,0];
 		}		
 	}
